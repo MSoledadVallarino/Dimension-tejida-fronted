@@ -1,0 +1,11 @@
+
+:root{
+  margin: 30px;
+  display:flex;
+  justify-content: center;
+}
+
+
+.img-maquina {
+  height: 300px;
+width: 200px}
