@@ -1,86 +1,68 @@
 import { useState } from 'react';
 import maquina from './fotos/maquinadetejer.jpg';
 import { calcularDimensiones } from './util';
-import { CalculoFormulario }  from './component/formularioCalculo';
+import { CalculoFormulario }  from './component/formularioCalculo.jsx';
 import './App.css';
+import {BasicExample} from './component/navbar.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  const [pasadasAgujasMuestra, setPasadasAgujasMuestra] = useState('');
-  const [cmMuestra, setCmMuestra] = useState('');
-  const [cmMolde, setCmMolde] = useState('');
-  const [resultado, setResultado] = useState('');
+const [resultado, setResultado] = useState('');
+const [resultado2, setResultado2] = useState('');
 
-
-  const handleClick = () => {
-    const pasadasAgujas = parseInt(pasadasAgujasMuestra);
-    const muestra = parseFloat(cmMuestra);
-    const molde = parseFloat(cmMolde);
-
-    if (!isNaN(pasadasAgujas) && !isNaN(muestra) && !isNaN(molde)) {
-      const dimensionCalculada = calcularDimensiones(pasadasAgujas, muestra, molde);
-      const resultadoEntero = Math.round(dimensionCalculada); // Redondeamos al entero más cercano
-      setResultado(`La dimensión calculada es: ${resultadoEntero}`);
-      // Limpiar los inputs
-      setPasadasAgujasMuestra('');
-      setCmMuestra('');
-      setCmMolde('');
-    } else {
-      setResultado('Por favor, ingrese valores numéricos válidos.');
-    }
-  }; 
-  
   return (
-    <>
-      <div>
-        <img src={maquina} className="img-maquina" alt="Maquina de tejer"/>
+      <>
+ <header className='encabezado'>
+  <h1 className='titulo'>DIMENSION TEJIDA</h1>
+ <div className='banner'></div>
+ <div className='barra'>
+ <BasicExample/>
+ </div>
+</header>
+
+      
+      <div className='container'>
+        <div className='form'>
+      <CalculoFormulario
+        labelPasadasAgujasMuestra="Cantidad de agujas:"
+        labelCmMuestra="Centímetros de la muestra:"
+        labelCmMolde="Centímetros del molde:"
+        calcularDimensiones={calcularDimensiones}
+        setResultadoEnPadre={setResultado}
+      />
+
+      {resultado && (
+       <div className="resultado">
+          {resultado}
+        </div>
+      )}
+    </div>
+    <div className='form'>
+    <CalculoFormulario
+        labelPasadasAgujasMuestra="Cantidad de pasadas:"
+        labelCmMuestra="Centímetros de la muestra:"
+        labelCmMolde="Centímetros del molde:"
+        calcularDimensiones={calcularDimensiones}
+        setResultadoEnPadre={setResultado2}
+      />
+
+      {resultado && (
+        <div className="resultado">
+          {resultado2}
+        </div>      
+      )}
       </div>
+       </div>  
 
-
-      <h1>Dimensión tejida</h1>
-      <CalculoFormulario
-        pasadasAgujasMuestra={pasadasAgujasMuestra}
-        setPasadasAgujasMuestra={setPasadasAgujasMuestra}
-        cmMuestra={cmMuestra}
-        setCmMuestra={setCmMuestra}
-        cmMolde={cmMolde}
-        setCmMolde={setCmMolde}
-        handleClick={handleClick}
-       labelPasadasAgujasMuestra="Cantidad de agujas:" // Ejemplo de nuevo prop
-        labelCmMuestra="Centímetros de la muestra:" // Ejemplo de nuevo prop
-        labelCmMolde="Centímetros del molde:" // Ejemplo de nuevo prop
-        botonTexto="Calcular Dimensión" // Ejemplo de nuevo prop
-      />
-        
-      {resultado && (
-        <div className="resultado">
-          {resultado}
-          </div>
-      )}
-
-      <CalculoFormulario
-        pasadasAgujasMuestra={pasadasAgujasMuestra}
-        setPasadasAgujasMuestra={setPasadasAgujasMuestra}
-        cmMuestra={cmMuestra}
-        setCmMuestra={setCmMuestra}
-        cmMolde={cmMolde}
-        setCmMolde={setCmMolde}
-        handleClick={handleClick}
-        labelPasadasAgujasMuestra="Cantidad de pasadas:" // Ejemplo de nuevo prop
-        labelCmMuestra="Centímetros de la muestra:" // Ejemplo de nuevo prop
-        labelCmMolde="Centímetros del molde:" // Ejemplo de nuevo prop
-        botonTexto="Calcular Dimensión" // Ejemplo de nuevo prop
-      />
-        
-      {resultado && (
-        <div className="resultado">
-          {resultado}
-          </div>
-      )}
-    </>
-  ) 
-
+      
+  </>  
+  );
+ 
 }
+
+
+ 
 
 export default App;
 

@@ -1,6 +1,6 @@
 
 :root{
-  margin: 30px;
+  margin: 1px;
   display:flex;
   justify-content: center;
 }
@@ -9,3 +9,34 @@
 .img-maquina {
   height: 300px;
 width: 200px}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 10%;
+  
+}
+.banner {
+  background-image: url("./fotos/lanas-colores.jpg");
+  background-size:cover;
+  background-position: inherit;
+  height: 30vh;
+  width: 180vh;
+  margin: 1px;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo{
+  font-style: italic;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+}
+ .navbar{
+  margin: 3px;
+  padding: 3px;
+  height: 10vh; 
+  background-color: rgb(162, 228, 241);
+}
