@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
-export function BasicExample() {
+export function Barra() {
   return (
 <Navbar expand="lg" className="navbar navbar-expand-lg">
   <Container className="py-1"> {/* Reducir el padding vertical del Container */}
@@ -11,9 +11,9 @@ export function BasicExample() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home"> Home </Nav.Link>
-        <Nav.Link href="#calculadora">Calculadora de tejidos</Nav.Link>
-        <Nav.Link href="#puntos">Puntos</Nav.Link>
+        <Nav.Link href="Home"> Home </Nav.Link>
+        <Nav.Link href="CalculadoraDeTejidos">Calculadora de tejidos</Nav.Link>
+        <Nav.Link href="Puntos">Puntos</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
@@ -22,4 +22,4 @@ export function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Barra;

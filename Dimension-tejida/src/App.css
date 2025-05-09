@@ -13,15 +13,15 @@ width: 200px}
 .container {
   display: flex;
   flex-direction: row;
-  margin: 10%;
-  
 }
-.banner {
+
+
+  .banner {
   background-image: url("./fotos/lanas-colores.jpg");
   background-size:cover;
   background-position: inherit;
   height: 30vh;
-  width: 180vh;
+  width: 100%;
   margin: 1px;
   padding: 1px;
   display: flex;
@@ -39,4 +39,5 @@ width: 200px}
   padding: 3px;
   height: 10vh; 
   background-color: rgb(162, 228, 241);
-}
+  display: flex;
+ }
