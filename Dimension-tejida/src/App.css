@@ -1,43 +1,52 @@
-
-:root{
-  margin: 1px;
-  display:flex;
+:root {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
   justify-content: center;
-}
-
-
-.img-maquina {
-  height: 300px;
-width: 200px}
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-
+  }
+  
+  .img-maquina {
+    height: 300px;
+    width: 200px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: grid;
+  }
+  
+  
   .banner {
-  background-image: url("./fotos/lanas-colores.jpg");
-  background-size:cover;
-  background-position: inherit;
-  height: 30vh;
-  width: 100%;
-  margin: 1px;
-  padding: 1px;
-  display: flex;
-  justify-content: center;
-}
-
-.titulo{
-  font-style: italic;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  display: flex;
-  justify-content: center;
-}
- .navbar{
-  margin: 3px;
-  padding: 3px;
-  height: 10vh; 
-  background-color: rgb(162, 228, 241);
-  display: flex;
- }
+    background-image: url('./fotos/lanas-colores.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    height: 30vh;
+    width: 100%;
+    margin: 0;
+    /*padding: 20px;  Añade padding para el título */
+    display: flex;
+    flex-direction: column; /* Alinea el título verticalmente */
+    justify-content: center; /* Centra el título verticalmente */
+    align-items: center; /* Centra el título horizontalmente */
+    color: white; /* Color del texto del título (ajusta según la visibilidad) */
+    text-align: center; /* Alinea el texto al centro */
+  }
+  
+  .titulo {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em; /* Ajusta el tamaño del título */
+    margin: 0; /* Elimina márgenes innecesarios del título */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar {
+    margin: 0; /* Elimina el margen para que se pegue al banner */
+    padding: 3px;
+    min-height: 10vh; /* Usa min-height para mayor flexibilidad */
+    background-color: rgb(162, 228, 241);
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos de la barra de navegación */
+    justify-content: space-between; /* Distribuye el espacio en la barra de navegación */
+  }

@@ -1,13 +1,22 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import logo from '../fotos/logo.jpg'
 
 
 export function Barra() {
   return (
-<Navbar expand="lg" className="navbar navbar-expand-lg">
-  <Container className="py-1"> {/* Reducir el padding vertical del Container */}
-    <Navbar.Brand href="#home">Dimension tejida</Navbar.Brand>
+    <>
+    <h1 className='titulo'>DIMENSION TEJIDA</h1>
+     <div className='banner'>
+  </div>
+ 
+ <div className='barra'>
+ 
+<Navbar expand="lg"  className="navbar navbar-expand-lg">
+  <Container className='container-fluid'> 
+    <Navbar.Brand href="#home"><img src={logo} alt="logo" width="75"
+              height="75"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
@@ -18,8 +27,11 @@ export function Barra() {
     </Navbar.Collapse>
   </Container>
 </Navbar>
-    
-  );
+
+</div>
+
+</>
+  )
 }
 
 export default Barra;

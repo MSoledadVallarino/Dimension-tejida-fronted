@@ -1,22 +1,21 @@
 
 import { Barra } from '../component/navbar.jsx';
+import logo from '../fotos/logo.jpg'
 
 function HomePage() {
 
   return (
       <>
- <header className='encabezado'>
-  <h1 className='titulo'>DIMENSION TEJIDA</h1>
- <div className='banner'></div>
- <div className='barra'>
+ 
  <Barra/>
- </div>
-</header>
+
+
 <main className='cuerpo'>
     
 
-      <div><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, asperiores. Neque, commodi repellendus. Beatae voluptatum aspernatur similique provident consectetur neque labore asperiores, consequatur ducimus dolor cupiditate saepe sint deleniti quia!
-        </p></div>
+      <div><p>Dimensión tejida </p>
+      <img src={logo}/>
+      </div>
       </main>
   </>  
   );
