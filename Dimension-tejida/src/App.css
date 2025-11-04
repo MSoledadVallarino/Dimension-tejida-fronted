@@ -1,52 +1,128 @@
-:root {
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #eff7f6;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.img-maquina {
+  height: 300px;
+  width: 200px;
+}
+
+.banner {
+  background-image: url('./fotos/maquinadetejer.jpeg'); 
+  background-size: cover;
+  background-position: center 30%; 
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra el título verticalmente */
+  align-items: center; /* Centra el título horizontalmente */
+  color: white; /* Color del texto del título (ajusta según la visibilidad) */
+ 
+}
+
+.titulo {
+  font-family: "Rock Salt";
+  font-weight: 400;
+  font-style:normal;
+  font-size: 5em;
+  margin-top: 0; /* Elimina márgenes innecesarios del título */
+  text-align: center;
+ padding: 0;
+ color: rgb(131, 9, 145);
+ -webkit-text-stroke-width: 3px;
+ -webkit-text-stroke-color:rgb(253, 248, 252);
+}
+
+.barra {
+  width: 100vw;
+  margin: 0;
+  padding: 0%;
+  background-color: #2ec4b6;
+  height: min-content;
+}
+
+.calculadora{
+  display: flex;
   justify-content: center;
-  }
-  
-  .img-maquina {
-    height: 300px;
-    width: 200px;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: grid;
-  }
-  
-  
-  .banner {
-    background-image: url('./fotos/lanas-colores.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    height: 30vh;
+}
+
+.logo{
+  border-radius: 50%;
+}
+
+.p{
+text-align:justify;
+margin: 4%;
+text-indent: 3%;
+}
+
+/* --- ESTILOS GENERALES DEL VIDEO (Mantenemos los de antes) --- */
+
+.video-card {
+    /* Aquí ya NO necesitamos definir un width fijo (ej: 320px) 
+       porque el Grid se encargará de dividir el espacio equitativamente. */
+    margin: 10px; /* Margen para separación entre videos */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: 0;
-    /*padding: 20px;  Añade padding para el título */
-    display: flex;
-    flex-direction: column; /* Alinea el título verticalmente */
-    justify-content: center; /* Centra el título verticalmente */
-    align-items: center; /* Centra el título horizontalmente */
-    color: white; /* Color del texto del título (ajusta según la visibilidad) */
-    text-align: center; /* Alinea el texto al centro */
-  }
-  
-  .titulo {
-    font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em; /* Ajusta el tamaño del título */
-    margin: 0; /* Elimina márgenes innecesarios del título */
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navbar {
-    margin: 0; /* Elimina el margen para que se pegue al banner */
-    padding: 3px;
-    min-height: 10vh; /* Usa min-height para mayor flexibilidad */
-    background-color: rgb(162, 228, 241);
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos de la barra de navegación */
-    justify-content: space-between; /* Distribuye el espacio en la barra de navegación */
-  }
+    height: 100%;
+}
+
+/* --- ESTRUCTURA DE COLUMNAS CON CSS GRID --- */
+
+.galeria-videos {
+    display: grid;
+    gap: 20px; /* Espacio entre las columnas y las filas */
+    padding: 20px;
+    margin: auto; /* Centrar el contenedor en la página */
+    max-width: 1200px; /* Opcional: limita el ancho máximo */
+}
+
+
+/* 1. MÓVIL (Por defecto: 1 Columna) */
+/* Todos los dispositivos pequeños verán el contenido en una sola fila vertical */
+.galeria-videos {
+    grid-template-columns: 1fr; /* 1 columna de ancho igual (fr) */
+}
+
+
+/* 2. TABLET (768px en adelante: 2 Columnas) */
+@media (min-width: 768px) {
+    .galeria-videos {
+        grid-template-columns: 1fr 1fr; /* 2 columnas de ancho igual */
+    }
+}
+
+
+/* 3. ESCRITORIO (1024px en adelante: 3 Columnas) */
+@media (min-width: 1024px) {
+    .galeria-videos {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de ancho igual */
+    }
+}
+.tutoriales{
+  display: flex;
+  justify-content: center;
+}

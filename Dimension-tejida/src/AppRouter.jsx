@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/home.jsx";
-import Calculadora from "./pages/calculadoraDeTejidos.jsx";
-import Puntos from "./pages/puntos.jsx";
+import Calculadora from "./pages/CalculadoraDeTejidos.jsx";
+import Tutoriales from "./pages/Tutoriales.jsx";
 
 function AppRouter() {
   return (
@@ -11,7 +11,7 @@ function AppRouter() {
       <Route path="/" element={<HomePage />} />
       <Route path="/Home" element={<HomePage />} />
       <Route path="/CalculadoraDeTejidos" element={<Calculadora />} />
-      <Route path="/Puntos" element={<Puntos />} />
+      <Route path="/Tutoriales" element={<Tutoriales />} />
     </Routes>
     
   );
